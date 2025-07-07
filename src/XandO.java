@@ -25,6 +25,43 @@ public class XandO {
 
     JPanel myFrame = new JPanel((new GridLayout(3, 3)));
 
+    JFrame nameWindow = new JFrame("Enter Player Names");
+    JTextField playerOneNameField = new JTextField(15);
+    JTextField playerTwoNameField = new JTextField(15);
+    JButton continueButton = new JButton("Continue");
+
+    String playerOneName = "Player One"; // Defaults
+    String playerTwoName = "Player Two";
+
+    void getPlayerNames() {
+        JPanel namePanel = new JPanel(new GridLayout(3, 2));
+        namePanel.add(new JLabel("Player One Name:"));
+        namePanel.add(playerOneNameField);
+        namePanel.add(new JLabel("Player Two Name:"));
+        namePanel.add(playerTwoNameField);
+        namePanel.add(new JLabel("")); // filler
+        namePanel.add(continueButton);
+
+        nameWindow.add(namePanel);
+        nameWindow.setSize(300, 150);
+        nameWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        nameWindow.setVisible(true);
+
+        continueButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                playerOneName = playerOneNameField.getText().trim();
+                playerTwoName = playerTwoNameField.getText().trim();
+
+                if (playerOneName.isEmpty()) playerOneName = "Player One";
+                if (playerTwoName.isEmpty()) playerTwoName = "Player Two";
+
+                nameWindow.dispose();  // Close name input window
+                drawgame();            // Start the actual game
+            }
+        });
+    }
+
 
     void drawgame() {
 
@@ -205,72 +242,73 @@ public class XandO {
     }
     public static void main(String[] args) {
         XandO xando = new XandO();
-        xando.drawgame();
+        xando.getPlayerNames();
+        //xando.drawgame();
     }
     void checkWin() {
         if (playerOne.contains(1) && playerOne.contains(2) && playerOne.contains(3)){
-            JOptionPane.showMessageDialog(null, "Player One Wins");
+            JOptionPane.showMessageDialog(null, playerOneName + " Wins!");
             disableAllButtons();
         }
         if (playerOne.contains(2) && playerOne.contains(5) && playerOne.contains(8)) {
-            JOptionPane.showMessageDialog(null, "Player One Wins");
+            JOptionPane.showMessageDialog(null, playerOneName + " Wins!");
             disableAllButtons();
         }
         if (playerOne.contains(4) && playerOne.contains(5) && playerOne.contains(6)) {
-            JOptionPane.showMessageDialog(null, "Player One Wins");
+            JOptionPane.showMessageDialog(null, playerOneName + " Wins!");
             disableAllButtons();
         }
         if (playerOne.contains(7) && playerOne.contains(8) && playerOne.contains(9)) {
-            JOptionPane.showMessageDialog(null, "Player One Wins");
+            JOptionPane.showMessageDialog(null, playerOneName + " Wins!");
             disableAllButtons();
         }
         if (playerOne.contains(1) && playerOne.contains(4) && playerOne.contains(7)) {
-            JOptionPane.showMessageDialog(null, "Player One Wins");
+            JOptionPane.showMessageDialog(null, playerOneName + " Wins!");
             disableAllButtons();
         }
         if (playerOne.contains(3) && playerOne.contains(6) && playerOne.contains(9)) {
-            JOptionPane.showMessageDialog(null, "Player One Wins");
+            JOptionPane.showMessageDialog(null, playerOneName + " Wins!");
             disableAllButtons();
         }
         if (playerOne.contains(1) && playerOne.contains(5) && playerOne.contains(9)) {
-            JOptionPane.showMessageDialog(null, "Player One Wins");
+            JOptionPane.showMessageDialog(null, playerOneName + " Wins!");
             disableAllButtons();
         }
         if (playerOne.contains(3) && playerOne.contains(5) && playerOne.contains(7)) {
-            JOptionPane.showMessageDialog(null, "Player One Wins");
+            JOptionPane.showMessageDialog(null, playerOneName + " Wins!");
             disableAllButtons();
         }
 
         if (playertwo.contains(1) && playertwo.contains(2) && playertwo.contains(3)){
-            JOptionPane.showMessageDialog(null, "Player Two Wins");
+            JOptionPane.showMessageDialog(null, playerTwoName + " Wins!");
             disableAllButtons();
         }
         if (playertwo.contains(2) && playertwo.contains(5) && playertwo.contains(8)) {
-            JOptionPane.showMessageDialog(null, "Player Two Wins");
+            JOptionPane.showMessageDialog(null, playerTwoName + " Wins!");
             disableAllButtons();
         }
         if (playertwo.contains(4) && playertwo.contains(5) && playertwo.contains(6)) {
-            JOptionPane.showMessageDialog(null, "Player Two Wins");
+            JOptionPane.showMessageDialog(null, playerTwoName + " Wins!");
             disableAllButtons();
         }
         if (playertwo.contains(7) && playertwo.contains(8) && playertwo.contains(9)) {
-            JOptionPane.showMessageDialog(null, "Player Two Wins");
+            JOptionPane.showMessageDialog(null, playerTwoName + " Wins!");
             disableAllButtons();
         }
         if (playertwo.contains(1) && playertwo.contains(4) && playertwo.contains(7)) {
-            JOptionPane.showMessageDialog(null, "Player Two Wins");
+            JOptionPane.showMessageDialog(null, playerTwoName + " Wins!");
             disableAllButtons();
         }
         if (playertwo.contains(3) && playertwo.contains(6) && playertwo.contains(9)) {
-            JOptionPane.showMessageDialog(null, "Player Two Wins");
+            JOptionPane.showMessageDialog(null, playerTwoName + " Wins!");
             disableAllButtons();
         }
         if (playertwo.contains(1) && playertwo.contains(5) && playertwo.contains(9)) {
-            JOptionPane.showMessageDialog(null, "Player Two Wins");
+            JOptionPane.showMessageDialog(null, playerTwoName + " Wins!");
             disableAllButtons();
         }
         if (playertwo.contains(3) && playertwo.contains(5) && playertwo.contains(7)) {
-            JOptionPane.showMessageDialog(null, "Player Two Wins");
+            JOptionPane.showMessageDialog(null, playerTwoName + " Wins!");
             disableAllButtons();
         }
     }
