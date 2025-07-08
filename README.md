@@ -3,9 +3,6 @@
 A fun and interactive **Tic-Tac-Toe game** built using Java. Play against a friend or challenge the **Computer AI** in this classic grid game!
 
 ---
-## Preview
-
----
 
 ## Features
 
@@ -40,20 +37,20 @@ A fun and interactive **Tic-Tac-Toe game** built using Java. Play against a frie
 ## Screenshot of the results
 
 ### Home page
-![Screenshot 2025-07-08 123059.png](Screenshot%202025-07-08%20123059.png)
+![Screenshot 2025-07-08 123059.png](src/Screenshot%202025-07-08%20123059.png)
 
 ### Input area
-![Screenshot 2025-07-08 123116.png](Screenshot%202025-07-08%20123116.png)
+![Screenshot 2025-07-08 123116.png](src/Screenshot%202025-07-08%20123116.png)
 
 ### Grid area 
-![Screenshot 2025-07-08 123140.png](Screenshot%202025-07-08%20123140.png)
+![Screenshot 2025-07-08 123140.png](src/creenshot%202025-07-08%20123140.png)
 
 ### Tie Message
-![Screenshot 2025-07-08 123201.png](Screenshot%202025-07-08%20123201.png)
+![Screenshot 2025-07-08 123201.png](src/Screenshot%202025-07-08%20123201.png)
 
 ### Win Message
-![Screenshot 2025-07-08 123218.png](Screenshot%202025-07-08%20123218.png)
+![Screenshot 2025-07-08 123218.png](src/Screenshot%202025-07-08%20123218.png)
 
 
 ### Score board
-![Screenshot 2025-07-08 123231.png](Screenshot%202025-07-08%20123231.png)
+![Screenshot 2025-07-08 123231.png](src/Screenshot%202025-07-08%20123231.png)
