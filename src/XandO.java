@@ -5,6 +5,9 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class XandO {
+    int playerOneWins = 0;
+    int playerTwoWins = 0;
+    int draws = 0;
 
 
     ArrayList<Integer> playerOne = new ArrayList<>();
@@ -247,30 +250,35 @@ public class XandO {
     }
     void checkWin() {
         if (playerOne.contains(1) && playerOne.contains(2) && playerOne.contains(3)){
+            playerOneWins++;
             JOptionPane.showMessageDialog(null, playerOneName + " Wins!");
             disableAllButtons();
             askToPlayAgain();
 
         }
         if (playerOne.contains(2) && playerOne.contains(5) && playerOne.contains(8)) {
+            playerOneWins++;
             JOptionPane.showMessageDialog(null, playerOneName + " Wins!");
             disableAllButtons();
             askToPlayAgain();
 
         }
         if (playerOne.contains(4) && playerOne.contains(5) && playerOne.contains(6)) {
+            playerOneWins++;
             JOptionPane.showMessageDialog(null, playerOneName + " Wins!");
             disableAllButtons();
             askToPlayAgain();
 
         }
         if (playerOne.contains(7) && playerOne.contains(8) && playerOne.contains(9)) {
+            playerOneWins++;
             JOptionPane.showMessageDialog(null, playerOneName + " Wins!");
             disableAllButtons();
             askToPlayAgain();
 
         }
         if (playerOne.contains(1) && playerOne.contains(4) && playerOne.contains(7)) {
+            playerOneWins++;
             JOptionPane.showMessageDialog(null, playerOneName + " Wins!");
             disableAllButtons();
             askToPlayAgain();
@@ -278,18 +286,21 @@ public class XandO {
         }
 
         if (playerOne.contains(3) && playerOne.contains(6) && playerOne.contains(9)) {
+            playerOneWins++;
             JOptionPane.showMessageDialog(null, playerOneName + " Wins!");
             disableAllButtons();
             askToPlayAgain();
 
         }
         if (playerOne.contains(1) && playerOne.contains(5) && playerOne.contains(9)) {
+            playerOneWins++;
             JOptionPane.showMessageDialog(null, playerOneName + " Wins!");
             disableAllButtons();
             askToPlayAgain();
 
         }
         if (playerOne.contains(3) && playerOne.contains(5) && playerOne.contains(7)) {
+            playerOneWins++;
             JOptionPane.showMessageDialog(null, playerOneName + " Wins!");
             disableAllButtons();
             askToPlayAgain();
@@ -297,52 +308,65 @@ public class XandO {
         }
 
         if (playertwo.contains(1) && playertwo.contains(2) && playertwo.contains(3)){
+            playerTwoWins++;
             JOptionPane.showMessageDialog(null, playerTwoName + " Wins!");
             disableAllButtons();
             askToPlayAgain();
 
         }
         if (playertwo.contains(2) && playertwo.contains(5) && playertwo.contains(8)) {
+            playerTwoWins++;
             JOptionPane.showMessageDialog(null, playerTwoName + " Wins!");
             disableAllButtons();
             askToPlayAgain();
 
         }
         if (playertwo.contains(4) && playertwo.contains(5) && playertwo.contains(6)) {
+            playerTwoWins++;
             JOptionPane.showMessageDialog(null, playerTwoName + " Wins!");
             disableAllButtons();
             askToPlayAgain();
 
         }
         if (playertwo.contains(7) && playertwo.contains(8) && playertwo.contains(9)) {
+            playerTwoWins++;
             JOptionPane.showMessageDialog(null, playerTwoName + " Wins!");
             disableAllButtons();
             askToPlayAgain();
 
         }
         if (playertwo.contains(1) && playertwo.contains(4) && playertwo.contains(7)) {
+            playerTwoWins++;
             JOptionPane.showMessageDialog(null, playerTwoName + " Wins!");
             disableAllButtons();
             askToPlayAgain();
 
         }
         if (playertwo.contains(3) && playertwo.contains(6) && playertwo.contains(9)) {
+            playerTwoWins++;
             JOptionPane.showMessageDialog(null, playerTwoName + " Wins!");
             disableAllButtons();
             askToPlayAgain();
 
         }
         if (playertwo.contains(1) && playertwo.contains(5) && playertwo.contains(9)) {
+            playerTwoWins++;
             JOptionPane.showMessageDialog(null, playerTwoName + " Wins!");
             disableAllButtons();
             askToPlayAgain();
 
         }
         if (playertwo.contains(3) && playertwo.contains(5) && playertwo.contains(7)) {
+            playerTwoWins++;
             JOptionPane.showMessageDialog(null, playerTwoName + " Wins!");
             disableAllButtons();
             askToPlayAgain();
 
+        }
+        if ((playerOne.size() + playertwo.size()) == 9) {
+            draws++;
+            JOptionPane.showMessageDialog(null, "It's a Draw!");
+            askToPlayAgain();
         }
     }
     void askToPlayAgain() {
@@ -350,6 +374,7 @@ public class XandO {
         if (choice == JOptionPane.YES_OPTION) {
             resetGame();
         } else {
+            showScoreboard();
             JOptionPane.showMessageDialog(null, "Thanks for playing!");
             System.exit(0);
         }
@@ -382,4 +407,17 @@ public class XandO {
         btn8.setEnabled(false);
         btn9.setEnabled(false);
     }
+    void showScoreboard() {
+        int playerOneLosses = playerTwoWins;
+        int playerTwoLosses = playerOneWins;
+
+        String scoreboard = playerOneName + "'s Record:\n"
+                + "Wins: " + playerOneWins + "\n\n"
+                + playerTwoName + "'s Record:\n"
+                + "Wins: " + playerTwoWins + "\n\n"
+                + "Draws: " + draws;
+
+        JOptionPane.showMessageDialog(null, scoreboard, "Final Scoreboard", JOptionPane.INFORMATION_MESSAGE);
+    }
+
 }
