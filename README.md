@@ -43,7 +43,7 @@ A fun and interactive **Tic-Tac-Toe game** built using Java. Play against a frie
 ![Screenshot 2025-07-08 123116.png](src/Screenshot%202025-07-08%20123116.png)
 
 ### Grid area 
-![Screenshot 2025-07-08 123140.png](src/creenshot%202025-07-08%20123140.png)
+![Screenshot 2025-07-08 123140.png](src/Screenshot%202025-07-08%20123140.png)
 
 ### Tie Message
 ![Screenshot 2025-07-08 123201.png](src/Screenshot%202025-07-08%20123201.png)
